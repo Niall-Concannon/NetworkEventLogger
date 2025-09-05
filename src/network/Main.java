@@ -5,10 +5,18 @@ import java.util.Random;
 public class Main {
 
 	public static void main(String[] args) {
-		// Loop 5 Random Event Objects
+		Random rand = new Random();
+		
+		// Loop Random Event Objects
 		for(int i = 0; i < 5; i++) {
-			NetworkEvent randomEvent = generateRandomEvent();
-			System.out.println(randomEvent);
+			try {
+				NetworkEvent randomEvent = generateRandomEvent();
+				System.out.println(randomEvent);
+				
+				Thread.sleep(rand.nextInt(5001));
+			} catch(InterruptedException e) {
+				Thread.currentThread().interrupt();
+			}
 		}
 	}
 
