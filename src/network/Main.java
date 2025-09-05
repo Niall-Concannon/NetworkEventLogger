@@ -7,8 +7,8 @@ public class Main {
 	public static void main(String[] args) {
 		Random rand = new Random();
 		
-		// Loop Random Event Objects
-		for(int i = 0; i < 5; i++) {
+		// Loop Random Event Objects - Until User Stops
+		for(int i = 0; i > -1; i++) {
 			try {
 				NetworkEvent randomEvent = generateRandomEvent();
 				System.out.println(randomEvent);
